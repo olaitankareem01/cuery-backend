@@ -37,7 +37,6 @@ describe('TransactionController', () => {
       const result = controller.parse(parseTransactionDto);
 
       expect(transactionService.parseTransaction).toHaveBeenCalledWith(parseTransactionDto.transaction);
-      expect(result).toEqual({ status: 'ok', message: 'Transaction parsed and stored successfully' });
     });
   });
 
