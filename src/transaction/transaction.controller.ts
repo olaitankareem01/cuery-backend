@@ -11,8 +11,7 @@ export class TransactionController {
 
   @Post('parse')
   parse(@Body() parseTransactionDto: ParseTransactionDto) {
-    this.transactionService.parseTransaction(parseTransactionDto.transaction);
-    return { status: 'ok', message: 'Transaction parsed and stored successfully' };
+    return this.transactionService.parseTransaction(parseTransactionDto.transaction);
   }
 
 

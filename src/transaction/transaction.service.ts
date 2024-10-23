@@ -18,9 +18,17 @@ export class TransactionService {
 
   // Parse and store transaction
   parseTransaction(transaction: string) {
-    const parsedTransaction = this.parseX12(transaction); 
-    this.transactions.push(parsedTransaction); 
-    this.logger.log(`Transaction: ${transaction} saved successfully`)
+    try {
+        const parsedTransaction = this.parseX12(transaction);
+        console.log(parsedTransaction);
+        this.transactions.push(parsedTransaction);
+        this.logger.log(`Transaction: ${transaction} saved successfully`);
+        
+        return { status: 'ok', message: 'Transaction parsed and stored successfully' };
+    } catch (error) {
+        this.logger.error(`Error parsing transaction: ${transaction}`, error);
+        throw error;
+    }
 }
 
 
@@ -95,6 +103,7 @@ export class TransactionService {
 
         } catch (error) {
             this.logger.error(`Error occured: ${error.message}`);  
+            throw error;
         }
 
     }
