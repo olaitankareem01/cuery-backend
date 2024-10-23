@@ -1,7 +1,7 @@
 import { Controller, Post, Body, Get, Query } from '@nestjs/common';
 import { TransactionService } from './transaction.service';
 import { ApiOperation, ApiQuery, ApiResponse } from '@nestjs/swagger';
-import { ParseTransactionDto } from '../../src/models/dtos/ParseTransaction.dto';
+import { ParseTransactionDto } from '../models/dtos/ParseTransaction.dto';
 
 
 
