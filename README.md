@@ -67,7 +67,7 @@ Ensure you have the following installed on your system:
    docker run -p 3000:3000 cuery-backend
    ```
   This command maps port 3000 of the container to port 3000 of your host machine. 
-  Open your browser and go to http://localhost:3000 to access the application.
+  Open your browser and go to http://localhost:3000/api to access the application.
 
 ### Testing
   Jest is being used for unit testing. To run the test suite, including unit tests and controller tests:
